@@ -58,8 +58,14 @@ var indexdefault = {
     },
     pageRefresh:function(){
         setInterval(function(){
-            indexdefault.pageLoad();
+            var nowDate = new Date;
+            $(".htmleaf-header h2").text(nowDate.Format("HH:mm:ss"));
         },1000);
+        
+        setInterval(function(){
+            indexdefault.setTimeLevel(indexdefault.getBeginDate());
+            indexdefault.setEnergyLevel(indexdefault.getBeginDate());
+        },10000);
     } 
 };
 

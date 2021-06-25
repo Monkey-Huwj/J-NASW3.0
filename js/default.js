@@ -9,10 +9,6 @@ var indexdefault = {
         
         indexdefault.setTimeLevel(indexdefault.getBeginDate());
         indexdefault.setEnergyLevel(indexdefault.getBeginDate());
-
-        setInterval(function(){
-            indexdefault.pageLoad();
-        },1000);
     },
     getBeginDate:function(){
         var nowDate = new Date;
@@ -59,7 +55,12 @@ var indexdefault = {
         var diffSeconds = beginDate - nowDate;
         var energy = (maxEnergySeconds - diffSeconds) / 1000 / 10
         return Math.ceil(energy);;
-    }
+    },
+    pageRefresh:function(){
+        setInterval(function(){
+            indexdefault.pageLoad();
+        },1000);
+    } 
 };
 
 Date.prototype.Format = function (fmt) { //author: meizz
@@ -78,4 +79,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
     return fmt;
     }
 
-$(document).ready(indexdefault.pageLoad);
+$(document).ready(function(){
+    indexdefault.pageLoad();
+    indexdefault.pageRefresh();
+});

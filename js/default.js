@@ -19,12 +19,14 @@ var indexdefault = {
         var nowDate_m = nowDate.getMinutes();
         var nowDate_s = nowDate.getSeconds();
         var beginDate = nowDate;
+        
+        var datestr=nowDate_y+"-"+nowDate_M+"-"+nowDate_d+" "+nowDate_h+":00:00";
+        beginDate=new Date(datestr.replace(/-/g,"/"));
+        
         if(nowDate_m>=30){
-            var datestr=nowDate_y+"-"+nowDate_M+"-"+nowDate_d+" "+(nowDate_h+1)+":00:00";
-            beginDate=new Date(datestr.replace(/-/g,"/"));
+            beginDate.setSeconds(beginDate.getSeconds()+3600);
         }else{
-            var datestr=nowDate_y+"-"+nowDate_M+"-"+nowDate_d+" "+nowDate_h+":"+30+":00";
-            beginDate=new Date(datestr.replace(/-/g,"/"));
+            beginDate.setSeconds(beginDate.getSeconds()+1800);
         }
         return beginDate;
     },

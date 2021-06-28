@@ -255,9 +255,9 @@ body .right {
 }
 .app_inner__tab .tab_left .big {
   position: absolute;
-  top: -5px;
+  top: -10px;
   -webkit-transition: all .3s .3s;
-  width: 2em;
+  width: 140px;
   transition: all .3s .3s;
   /* left: 390px; */
   font-size: 70px;

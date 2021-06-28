@@ -36,15 +36,57 @@ var indexdefault = {
     setTimeLevel:function(beginDate){
         beginDate.setSeconds(beginDate.getSeconds()-1800);
         $(".app_inner__tab").each(function(){
-            beginDate.setSeconds(beginDate.getSeconds()+1800);
-            var beginDateStr = beginDate.Format("HH:mm");
-            $(this).find("h2").text(beginDateStr);
-            if(beginDateStr == specialTime){
-                $(this).find("i").text(specialText);
+            // beginDate.setSeconds(beginDate.getSeconds()+1800);
+            // var beginDateStr = beginDate.Format("HH:mm");
+            // $(this).find("h2").text(beginDateStr);
+            // if(beginDateStr == specialTime){
+            //     $(this).find("i").text(specialText);
+            // }
+            // else{
+            //     $(this).find("i").text(mainText);
+            // }
+
+            if(beginDate.Format("HH:mm") == "16:00"){
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
+                var beginDateStr = beginDate.Format("HH:mm");
+                $(this).find("h2").text(beginDateStr);
+                $(this).find("i").text("血包插秧");
+            }
+            else if(beginDate.Format("HH:mm") == "16:30"){
+                beginDate.setSeconds(beginDate.getSeconds()+1200);
+                var beginDateStr = beginDate.Format("HH:mm");
+                $(this).find("h2").text(beginDateStr);
+                $(this).find("i").text("甘霖施肥");
+            }
+            else if(beginDate.Format("HH:mm") == "16:50"){
+                beginDate.setSeconds(beginDate.getSeconds()+1200);
+                var beginDateStr = beginDate.Format("HH:mm");
+                $(this).find("h2").text(beginDateStr);
+                $(this).find("i").text("甘霖收割");
+            }
+            else if(beginDate.Format("HH:mm") == "17:10"){
+                beginDate.setSeconds(beginDate.getSeconds()+1200);
+                var beginDateStr = beginDate.Format("HH:mm");
+                $(this).find("h2").text(beginDateStr);
+                if(beginDateStr == specialTime){
+                    $(this).find("i").text(specialText);
+                }
+                else{
+                    $(this).find("i").text(mainText);
+                }
             }
             else{
-                $(this).find("i").text(mainText);
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
+                var beginDateStr = beginDate.Format("HH:mm");
+                $(this).find("h2").text(beginDateStr);
+                if(beginDateStr == specialTime){
+                    $(this).find("i").text(specialText);
+                }
+                else{
+                    $(this).find("i").text(mainText);
+                }
             }
+            
         });
 
         var maxDate = new Date;
@@ -56,9 +98,35 @@ var indexdefault = {
         var nowDate = new Date;
         beginDate.setSeconds(beginDate.getSeconds()-1800);
         $(".tab_left__image h1").each(function(){
-            beginDate.setSeconds(beginDate.getSeconds()+1800);
-            var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
-            $(this).text(energy);
+            // beginDate.setSeconds(beginDate.getSeconds()+1800);
+            // var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
+            // $(this).text(energy);
+
+            if(beginDate.Format("HH:mm") == "16:00"){
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
+                var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
+                $(this).text(energy);
+            }
+            else if(beginDate.Format("HH:mm") == "16:30"){
+                beginDate.setSeconds(beginDate.getSeconds()+1200);
+                var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
+                $(this).text(energy);
+            }
+            else if(beginDate.Format("HH:mm") == "16:50"){
+                beginDate.setSeconds(beginDate.getSeconds()+1200);
+                var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
+                $(this).text(energy);
+            }
+            else if(beginDate.Format("HH:mm") == "17:10"){
+                beginDate.setSeconds(beginDate.getSeconds()+1200);
+                var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
+                $(this).text(energy);
+            }
+            else{
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
+                var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
+                $(this).text(energy);
+            }
         });
 
         $(".tab_left__image h1")[5].innerHTML =0;

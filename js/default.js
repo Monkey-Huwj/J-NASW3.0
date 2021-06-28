@@ -46,7 +46,13 @@ var indexdefault = {
             //     $(this).find("i").text(mainText);
             // }
 
-            if(beginDate.Format("HH:mm") == "16:00"){
+            if(beginDate.Format("HH:mm") == "14:00" || beginDate.Format("HH:mm") == "14:30"||beginDate.Format("HH:mm") == "15:00"||beginDate.Format("HH:mm") == "15:30"){
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
+                var beginDateStr = beginDate.Format("HH:mm");
+                $(this).find("h2").text(beginDateStr);
+                $(this).find("i").text("保留体力");
+            }
+            else if(beginDate.Format("HH:mm") == "16:00"){
                 beginDate.setSeconds(beginDate.getSeconds()+1800);
                 var beginDateStr = beginDate.Format("HH:mm");
                 $(this).find("h2").text(beginDateStr);

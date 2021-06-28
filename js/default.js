@@ -7,7 +7,7 @@ var indexdefault = {
         
         $(".htmleaf-header h2").text(nowDate.Format("HH:mm:ss"));
         $(".tab_right h3").text("左侧为当前体力最大值");
-        $(".tab_right h4").text("到达该时间体力将存满");
+        $(".tab_right h4").text("等于左侧体力值目标时间将恢复满");
         $(".tab_right p").text("超过左侧体力值目标时间将会溢出");
         
         indexdefault.setTimeLevel(indexdefault.getBeginDate());
@@ -46,40 +46,41 @@ var indexdefault = {
             //     $(this).find("i").text(mainText);
             // }
 
-            if(beginDate.Format("HH:mm") == "14:00" || beginDate.Format("HH:mm") == "14:30"||beginDate.Format("HH:mm") == "15:00"||beginDate.Format("HH:mm") == "15:30"){
+            if(beginDate.Format("HH:mm") == "07:30" || beginDate.Format("HH:mm") == "08:00"||beginDate.Format("HH:mm") == "08:30"||beginDate.Format("HH:mm") == "09:00"){
                 beginDate.setSeconds(beginDate.getSeconds()+1800);
                 var beginDateStr = beginDate.Format("HH:mm");
                 $(this).find("h2").text(beginDateStr);
-                $(this).find("i").text("保留体力");
+                $(this).find("i").text("预留体力");
             }
-            else if(beginDate.Format("HH:mm") == "16:00"){
+            else if(beginDate.Format("HH:mm") == "09:30"){
                 beginDate.setSeconds(beginDate.getSeconds()+1800);
                 var beginDateStr = beginDate.Format("HH:mm");
                 $(this).find("h2").text(beginDateStr);
-                $(this).find("i").text("血包插秧");
+                $(this).find("i").text("待定公告");
             }
-            else if(beginDate.Format("HH:mm") == "16:30"){
-                beginDate.setSeconds(beginDate.getSeconds()+1200);
+            else if(beginDate.Format("HH:mm") == "10:00"){
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
                 var beginDateStr = beginDate.Format("HH:mm");
                 $(this).find("h2").text(beginDateStr);
-                $(this).find("i").text("甘霖施肥");
+                $(this).find("i").text("待定公告");
             }
-            else if(beginDate.Format("HH:mm") == "16:50"){
-                beginDate.setSeconds(beginDate.getSeconds()+1200);
+            else if(beginDate.Format("HH:mm") == "10:30"){
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
                 var beginDateStr = beginDate.Format("HH:mm");
                 $(this).find("h2").text(beginDateStr);
-                $(this).find("i").text("甘霖收割");
+                $(this).find("i").text("待定公告");
             }
-            else if(beginDate.Format("HH:mm") == "17:10"){
-                beginDate.setSeconds(beginDate.getSeconds()+1200);
+            else if(beginDate.Format("HH:mm") == "11:00"){
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
                 var beginDateStr = beginDate.Format("HH:mm");
                 $(this).find("h2").text(beginDateStr);
-                if(beginDateStr == specialTime){
-                    $(this).find("i").text(specialText);
-                }
-                else{
-                    $(this).find("i").text(mainText);
-                }
+                $(this).find("i").text("待定公告");
+            }
+            else if(beginDate.Format("HH:mm") == "11:30"){
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
+                var beginDateStr = beginDate.Format("HH:mm");
+                $(this).find("h2").text(beginDateStr);
+                $(this).find("i").text("待定公告");
             }
             else{
                 beginDate.setSeconds(beginDate.getSeconds()+1800);
@@ -108,23 +109,28 @@ var indexdefault = {
             // var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
             // $(this).text(energy);
 
-            if(beginDate.Format("HH:mm") == "16:00"){
+            if(beginDate.Format("HH:mm") == "09:30"){
                 beginDate.setSeconds(beginDate.getSeconds()+1800);
                 var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
                 $(this).text(energy);
             }
-            else if(beginDate.Format("HH:mm") == "16:30"){
-                beginDate.setSeconds(beginDate.getSeconds()+1200);
+            else if(beginDate.Format("HH:mm") == "10:00"){
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
                 var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
                 $(this).text(energy);
             }
-            else if(beginDate.Format("HH:mm") == "16:50"){
-                beginDate.setSeconds(beginDate.getSeconds()+1200);
+            else if(beginDate.Format("HH:mm") == "10:30"){
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
                 var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
                 $(this).text(energy);
             }
-            else if(beginDate.Format("HH:mm") == "17:10"){
-                beginDate.setSeconds(beginDate.getSeconds()+1200);
+            else if(beginDate.Format("HH:mm") == "11:00"){
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
+                var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
+                $(this).text(energy);
+            }
+            else if(beginDate.Format("HH:mm") == "11:30"){
+                beginDate.setSeconds(beginDate.getSeconds()+1800);
                 var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
                 $(this).text(energy);
             }

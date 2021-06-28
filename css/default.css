@@ -56,6 +56,7 @@ a{color: #2fa0ec;text-decoration: none;outline: none;}
 a:hover,a:focus{color:#74777b;}
 
 .htmleaf-container{
+	height: 700px;
 	padding-top:20em ;
 	text-align: center;
 	overflow: hidden;

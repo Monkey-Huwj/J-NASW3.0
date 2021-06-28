@@ -92,10 +92,11 @@ body .right {
   transition: all 0.3s 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .app_inner input[type="radio"]:checked + label .app_inner__tab .tab_left .big {
-  left: 100%;
+  left: 90
+    %;
 }
 .app_inner input[type="radio"]:not(checked) + label .app_inner__tab .tab_left .big {
-  left: 20%;
+  left: 15%;
 }
 .app_inner input[type="radio"]:checked + label .app_inner__tab h2 i {
   opacity: 0;
@@ -257,7 +258,7 @@ body .right {
   position: absolute;
   top: -10px;
   -webkit-transition: all .3s .3s;
-  width: 140px;
+  width: 180px;
   transition: all .3s .3s;
   /* left: 390px; */
   font-size: 70px;

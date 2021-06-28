@@ -1,3 +1,6 @@
+var mainText = "插秧插秧";
+var specialTime = "13:00";
+var specialText = "插秧插秧";
 var indexdefault = {
     pageLoad: function () {
         var nowDate = new Date;
@@ -32,9 +35,16 @@ var indexdefault = {
     },
     setTimeLevel:function(beginDate){
         beginDate.setSeconds(beginDate.getSeconds()-1800);
-        $(".app_inner__tab h2").each(function(){
+        $(".app_inner__tab").each(function(){
             beginDate.setSeconds(beginDate.getSeconds()+1800);
-            $(this).text(beginDate.Format("HH:mm"));
+            var beginDateStr = beginDate.Format("HH:mm");
+            $(this).find("h2").text(beginDateStr);
+            if(beginDateStr == specialTime){
+                $(this).find("i").text(specialText);
+            }
+            else{
+                $(this).find("i").text(mainText);
+            }
         });
 
         var maxDate = new Date;
@@ -50,6 +60,7 @@ var indexdefault = {
             var energy = indexdefault.getEnergyByTimeDiff(nowDate,beginDate)
             $(this).text(energy);
         });
+
         $(".tab_left__image h1")[5].innerHTML =0;
     },
     getEnergyByTimeDiff: function (nowDate,beginDate) {

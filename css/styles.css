@@ -92,10 +92,10 @@ body .right {
   transition: all 0.3s 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .app_inner input[type="radio"]:checked + label .app_inner__tab .tab_left .big {
-  left: 260px;
+  left: 100%;
 }
 .app_inner input[type="radio"]:not(checked) + label .app_inner__tab .tab_left .big {
-  left: 400px;
+  left: 20%;
 }
 .app_inner input[type="radio"]:checked + label .app_inner__tab h2 i {
   opacity: 0;
@@ -255,11 +255,12 @@ body .right {
 }
 .app_inner__tab .tab_left .big {
   position: absolute;
-  top: -17px;
+  top: -5px;
   -webkit-transition: all .3s .3s;
+  width: 2em;
   transition: all .3s .3s;
-  left: 390px;
-  font-size: 180px;
+  /* left: 390px; */
+  font-size: 4em;
   opacity: 0.08;
 }
 .app_inner__tab .tab_left__image {
